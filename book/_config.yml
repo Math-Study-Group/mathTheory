@@ -27,6 +27,9 @@ sphinx:
       exclude_patterns: ["**/_*.yml", "**/*.md", "**/*.ipynb"]
     html_theme_options:
       theme_color: "#9b59b6"
+      use_repository_button: false
+      use_download_button: false
+      use_issues_button: false
       logo:
         text: MathBase (1.0.0)
       repository_url: "https://github.com/Math-Study-Group/mathTheory" #add your own repo URL here
