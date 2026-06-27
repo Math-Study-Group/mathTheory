@@ -1,25 +1,73 @@
-# Configuration of _toc.yml file is explained in detail here: https://jupyterbook.org/en/stable/structure/toc.html and https://sphinx-external-toc.readthedocs.io/en/latest/user_guide/sphinx.html
-
 format: jb-book
-root: intro.md
+root: index # ref_graph: {'ignore': True}
+
+# options:
+  # numbered: true
 
 parts:
-  - caption: Part with some content # A title for the whole the subtree, e.g. shown above the subtree in ToCs, configuration part of sphinx-external-toc (https://sphinx-external-toc.readthedocs.io/en/latest/intro.html)
-    numbered: false                 # Default value (line can be removed), whether to number the chapters/sections in this part, configuration part of sphinx-external-toc (https://sphinx-external-toc.readthedocs.io/en/latest/intro.html)
-    style: numerical                # Default value (line can be removed), style of numbering for this part, configuration part of TeachBooks' version of sphinx-external-toc (https://github.com/TeachBooks/sphinx-external-toc?tab=readme-ov-file#toc-tree-options)
-    restart_numbering: false        # Default value (line can be removed), whether to restart numbering for this part, configuration part of TeachBooks' version of sphinx-external-toc (https://github.com/TeachBooks/sphinx-external-toc?tab=readme-ov-file#toc-tree-options)
+  - caption: 01.Algebra
+    numbered: true
     chapters:
-    - file: some_content/overview
-      sections:
-      - file: some_content/text_and_code
-  - caption: Exercises
+      - file: chapters/01.Algebra/01.1.linear-space/main # ref_graph: {'tag': 'Algebra, Linear Space'}
+      - file: chapters/01.Algebra/01.2.matrix/main # ref_graph: {'tag': 'Algebra, Matrix'}
+
+  - caption: 02.Analysis
+    numbered: true
     chapters:
-    - file: exercises.md
-      sections:
-      - file: exercises/001
-      - file: exercises/002
-  - caption: Miscellaneous
+      - file: chapters/02.Analysis/02.1.metric-space/main # ref_graph: {'tag': 'Analysis, Metric Spaces'}
+        sections:
+          - file: chapters/02.Analysis/02.1.metric-space/Inner-Product
+      - file: chapters/02.Analysis/02.2.int-calculus/main # ref_graph: {'tag': 'Analysis, Integral Calculus'}
+      - file: chapters/02.Analysis/02.3.improper-integral/main # ref_graph: {'tag': 'Analysis, Improper Integral'}
+      - file: chapters/02.Analysis/02.4.series/main # ref_graph: {'tag': 'Analysis, Series'}
+      - file: chapters/02.Analysis/02.5.normed-ls/main # ref_graph: {'tag': 'Analysis, Normed Linear Space'}
+      - file: chapters/02.Analysis/02.6.spaces/main # ref_graph: {'tag': 'Analysis, Spaces'}
+      - file: chapters/02.Analysis/02.7.bounded-lo/main # ref_graph: {'tag': 'Analysis, Bounded Linear Operators'}
+
+  - caption: 03.Probability Theory
+    numbered: true
     chapters:
-    - file: Miscellaneous/references.md
-    - file: Miscellaneous/changelog.md
-    - file: Miscellaneous/credits.md
+      - file: chapters/03.Probability-theory/03.1.measure/main # ref_graph: {'tag': 'Probability Theory, Measure'}
+      - file: chapters/03.Probability-theory/03.2.basis/main # ref_graph: {'tag': 'Probability Theory, Basis'}
+      - file: chapters/03.Probability-theory/03.3.asymptotic/main # ref_graph: {'tag': 'Probability Theory, Asymptotic Theory'}
+
+  - caption: 04.Optimization
+    numbered: true
+    chapters:
+      - file: chapters/04.Optimization/04.1.convex/main # ref_graph: {'tag': 'Optimization, Convex Optimization'}
+      - file: chapters/04.Optimization/04.2.program/main # ref_graph: {'tag': 'Optimization, Mathematical Programming'}
+
+  - caption: 05.Inequalities and Inequality Theory
+    numbered: true
+    chapters:
+      - file: chapters/05.Inequality/05.1.ineqs/main # ref_graph: {'tag': 'Inequalities, Inequality Theory'}
+
+  - caption: 06.Statistics
+    numbered: true
+    chapters:
+      - file: chapters/06.Statistics/06.1.basis/main # ref_graph: {'tag': 'Statistics, Statistical Foundations'}
+      - file: chapters/06.Statistics/06.2.point-estimation/main # ref_graph: {'tag': 'Statistics, Point Estimation'}
+      - file: chapters/06.Statistics/06.3.testing-hypothesis/main # ref_graph: {'tag': 'Statistics, Hypothesis Testing'}
+      - file: chapters/06.Statistics/06.4.statistical-computing/main # ref_graph: {'tag': 'Statistics, Statistical Computing'}
+      - file: chapters/06.Statistics/06.5.Linear-model/main # ref_graph: {'tag': 'Statistics, Linear Models'}
+      - file: chapters/06.Statistics/06.6.multivariate/main # ref_graph: {'tag': 'Statistics, Multivariate Statistics'}
+      - file: chapters/06.Statistics/06.7.aov/main # ref_graph: {'tag': 'Statistics, Analysis of Variance'}
+      - file: chapters/06.Statistics/06.8.sampling-method/main # ref_graph: {'tag': 'Statistics, Sampling Methods'}
+      - file: chapters/06.Statistics/06.9.time-series/main # ref_graph: {'tag': 'Statistics, Time Series'}
+      - file: chapters/06.Statistics/06.10.machine-learning/main # ref_graph: {'tag': 'Statistics, Machine Learning'}
+      - file: chapters/06.Statistics/06.11.bayesian/main # ref_graph: {'tag': 'Statistics, Bayesian Statistics'}
+
+  - caption: 07.Nonparametric Statistics
+    numbered: true
+    chapters:
+      - file: chapters/07.nonparametric-statistics/07.1.contingency-table-independence/main # ref_graph: {'tag': 'Nonparametric Statistics, Contingency Tables'}
+      - file: chapters/07.nonparametric-statistics/07.2.one-sample-location-tests/main # ref_graph: {'tag': 'Nonparametric Statistics, One-sample Tests'}
+      - file: chapters/07.nonparametric-statistics/07.3.two-sample-location-tests/main # ref_graph: {'tag': 'Nonparametric Statistics, Two-sample Tests'}
+      - file: chapters/07.nonparametric-statistics/07.4.k-sample-location-tests/main # ref_graph: {'tag': 'Nonparametric Statistics, K-sample Tests'}
+      - file: chapters/07.nonparametric-statistics/07.5.monotone-association-tests/main # ref_graph: {'tag': 'Nonparametric Statistics, Monotone Association'}
+      - file: chapters/07.nonparametric-statistics/07.6.rank-based-and-miscellaneous-methods/main # ref_graph: {'tag': 'Nonparametric Statistics, Rank-based Methods'}
+
+  - caption: 08.Reference
+    numbered: false
+    chapters:
+      - file: chapters/08.Reference/main # ref_graph: {'ignore': True}
